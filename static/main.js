@@ -179,20 +179,16 @@ toggle.addEventListener("click", function(){
         theme = 'night';
         header.classList.add('black')
         header.style.backgroundImage = "url('static/6.png')"
-        footer.classList.add('black')
-        footer.style.backgroundImage = "url('static/6.png')"
+        // footer.classList.add('black')
+        // footer.style.backgroundImage = "url('static/6.png')"
         body.classList.add('black')
         forIphones();
     }else if(theme == "night"){
         theme = 'day';
         header.classList.remove('black')
         header.style.backgroundImage = "url('static/fon3.png')"
-        footer.classList.remove('black')
-        // if(screen.width < 500){
-        footer.style.backgroundImage = "url('static/Kanna.gif')";
-        // }else {
-        //     footer.style.backgroundImage = "url('fon3.png')"
-        // }
+        // footer.classList.remove('black')
+        // footer.style.backgroundImage = "url('static/Kanna.gif')";
         body.classList.remove('black')
         forIphones();
     }
