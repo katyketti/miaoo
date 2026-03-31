@@ -1,1 +1,283 @@
-!
+<!DOCTYPE html>
+<html lang="en" translate="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    <meta name="keywords" content="Katyameow, Каток, Дежнева, Дежнёва, Дежнева Екатерина, Дежнёва Екатерина, Дежнева Катя, Дежнёва Катя, Крутышка">
+    <meta name="description" content="Сайт Катка (здесь есть Канна и темная тема)">
+    <link rel="stylesheet" href="static/style.css">
+    <title>Katyaket.com</title>
+    <style>
+        /*Для узких экранов*/
+@media(max-width: 480px){
+    html{
+        max-width: 100%;
+        max-height: 100%;
+        overflow-x: hidden;
+    }
+    /*Body*/
+    body{
+        background-color: azure;
+        margin: 0 auto;
+        max-width: 100%;
+        min-width: 100%;
+        overflow-x: hidden;
+    }
+    #essay{
+        white-space: pre-line;
+        position: relative;
+        word-wrap: normal;
+    }
+    #content{
+        width: 100%;
+        margin-top: -15px;
+    }
+    /*Header*/
+    header{
+        background-size: auto 70%;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        background-repeat: repeat-x;
+        background-color: #fff;
+        width: 100%;
+    }
+    #main{
+        text-shadow: rgb(255, 255, 255) 0 0 5px;
+        white-space: pre;
+        font-size: 40px;
+        font-family:Georgia, 'Times New Roman', Times, serif;
+    }
+    #fr{
+        border-left: 0px;
+    }
+    .choosen{
+        color: rgb(149, 148, 148);
+        border-left-color: black;
+    }
+    p{
+        float: left;
+        width: 18.5%;
+        margin-top: -10px;
+        font-style: italic;
+        font-size: 14px;
+        border-left: 10px;
+        border-color: black;
+        border-left: solid;
+    }
+    /*Footer*/
+    footer{
+        width: 100%;
+        padding-top: 10px;
+        padding-bottom: 15px;
+        background-color: rgb(151, 150, 150);
+        color: #000000;
+        text-shadow: rgb(255, 255, 255) 0 0 5px;
+        /*background-image: url('fon3.png');*/
+        background-image: url('Канна.gif');
+    }
+    .icons{
+        width: 40px;
+        margin-left: 20px;
+        margin-right: 20px;
+        filter: drop-shadow(7px 7px 7px rgba(255, 255, 255, 0.5));
+    }
+    /**/
+    label{
+        width:40px;
+        height:20px;
+        position: relative;
+        display: block;
+        background: #ebebeb;
+        border-radius: 200px;
+        box-shadow: inset 0px 5px 15px rgba(0,0,0,0.4), inset 0px -5px 15px rgba(255,255,255,0.4);
+        cursor: pointer;
+    }
+    label:after{
+        content: "";
+        width:18px;
+        height: 18px;
+        position: fixed;
+        top:10px;
+        left:10px;
+        background: linear-gradient(180deg,#ffcc89,#d8860b);
+        border-radius: 18px;
+        box-shadow: 0px 5px 10px rgba(0,0,0,0.2);
+    }
+    input{
+        width: 0;
+        height: 0;
+        visibility: hidden;
+    }
+    input:checked + label{
+        background: #242424;
+    }
+    input:checked + label:after{
+        left:49px;
+        transform: translateX(-100%);
+        background: linear-gradient(180deg,#777,#3a3a3a);
+    }
+    label, label:after{
+        transition: 0.3s
+    }
+    #switchThemeWindow{
+        width: 5%;
+        height: auto;
+        z-index: 9997;
+        position: fixed;
+        top: -10.5px;
+        left: 9.8px;
+    }
+    .black{
+        background-color: #242424;
+        color: white;
+        border-color: white;
+    }
+}
+
+/*Для широких экранов*/
+@media(min-width: 480px){
+    html{
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+    /*Body*/
+    body{
+        padding-top: 210px;
+        background-color: azure;
+        max-width: 100%;
+        margin: 0 auto;
+        overflow: hidden;
+    }
+    #essay{
+            position: relative;
+            white-space: pre;
+    }
+    /*Header*/
+    header{
+        background-repeat: repeat-x;
+        background-color: #fff;
+        width: 100%;
+        position: absolute;
+        top: 0px;
+        background-size: auto 70%;
+    }
+    #main{
+        text-shadow: rgb(255, 255, 255) 0 0 5px;
+        white-space: pre;
+        font-size: 70px;
+        font-family:Georgia, 'Times New Roman', Times, serif;
+    }
+    #fr{
+        border-left: 0px;
+    }
+    .choosen{
+        color: rgb(149, 148, 148);
+        border-left-color: black;
+    }
+    p{
+        float: left;
+        width: 19.5%;
+        margin-top: 0px;
+        font-style: italic;
+        font-size: x-large;
+        border-left: 10px;
+        border-color: black;
+        border-left: solid;
+    }
+    /*Footer*/
+    footer{
+        width: 100%;
+        padding-top: 10px;
+        padding-bottom: 15px;
+        background-color: rgb(151, 150, 150);
+        color: #000000;
+        text-shadow: rgb(255, 255, 255) 0 0 5px;
+        background-image: url('Канна.gif');
+        /*background-repeat: repeat-y;*/
+        background-position-x: center;
+    }
+    .icons{
+        width: 40px;
+        margin-left: 20px;
+        margin-right: 20px;
+        filter: drop-shadow(7px 7px 7px rgba(255, 255, 255, 0.5));
+    }
+    /**/
+    label{
+        width:40px;
+        height:20px;
+        position: relative;
+        display: block;
+        background: #ebebeb;
+        border-radius: 200px;
+        box-shadow: inset 0px 5px 15px rgba(0,0,0,0.4), inset 0px -5px 15px rgba(255,255,255,0.4);
+        cursor: pointer;
+    }
+    label:after{
+        content: "";
+        width:18px;
+        height: 18px;
+        position: fixed;
+        top:10px;
+        left:10px;
+        background: linear-gradient(180deg,#ffcc89,#d8860b);
+        border-radius: 18px;
+        box-shadow: 0px 5px 10px rgba(0,0,0,0.2);
+    }
+    input{
+        width: 0;
+        height: 0;
+        visibility: hidden;
+    }
+    input:checked + label{
+        background: #242424;
+    }
+    input:checked + label:after{
+        left:49px;
+        transform: translateX(-100%);
+        background: linear-gradient(180deg,#777,#3a3a3a);
+    }
+    label, label:after{
+        transition: 0.3s
+    }
+    #switchThemeWindow{
+        width: 5%;
+        height: auto;
+        z-index: 9997;
+        position: fixed;
+        top: -9px;
+        left: 9.8px;
+    }
+    .black{
+        background-color: #242424;
+        color: white;
+        border-color: white;
+    }
+}
+    </style>
+</head>
+<body id="body">
+    <header id="header">
+        <center><h1 id="main">K  Т  K  T</h1></center>
+        <center><p id="fr">français</p><p id="sp">español</p><p id="eng">english</p><p id="nih">日本語</p><p id="rus" class="choosen">русский</p></center>
+    </header>
+    <div id="switchThemeWindow">
+        <input type="checkbox" id="darkmode-toggle"/>
+        <label for="darkmode-toggle">
+    </div>
+    <div id="content">
+        <h1 id="essay">Я делаю плейлисты!</h1>
+    </div>
+    <footer id="footer">
+        <center><h1>Обратная связь</h1></center>
+        <center>
+            <a href="https://t.me/katyacatmeow123"><img class="icons" id="telegram" src="https://cdn-icons-png.flaticon.com/128/906/906377.png" alt="telegram"></a>
+            <a href="mailto:iamwitch6@gmail.com"><img class="icons" id="mail" src="https://cdn-icons-png.flaticon.com/128/552/552486.png" alt="mail"></a>
+            <a href="https://youtube.com/@katyacat123?"><img class="icons" id="youtube" src="https://cdn-icons-png.flaticon.com/128/3670/3670209.png" alt="youtube"></a>
+            <a href="https://wa.me/89081815406"><img class="icons" id="whatsapp" src="https://cdn-icons-png.flaticon.com/128/3670/3670133.png" alt="whatsapp"></a>
+        </center>
+    </footer>
+
+    <script src="static/main.js"></script>
+</body>
+</html>
