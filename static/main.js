@@ -178,9 +178,9 @@ toggle.addEventListener("click", function(){
     if(theme == "day"){
         theme = 'night';
         header.classList.add('black')
-        header.style.backgroundImage = "static/url('6.png')"
+        header.style.backgroundImage = "url('static/6.png')"
         footer.classList.add('black')
-        footer.style.backgroundImage = "static/url('6.png')"
+        footer.style.backgroundImage = "url('static/6.png')"
         body.classList.add('black')
         forIphones();
     }else if(theme == "night"){
