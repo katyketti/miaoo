@@ -251,9 +251,11 @@
     }
 
     #essay {
-        position: absolute;
         white-space: pre-wrap;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        font-weight: normal;
     }
+
 
     @media(max-width: 450px) {
         header .paragraphs p {
@@ -379,6 +381,7 @@ Aujourd’hui, je travaille sur des projets visuels, j’écris parfois, et je c
 // Дальше скрипт
 const mainText = document.querySelector(".main h1")
 const toggle = document.getElementById('toggle_checkbox')
+const essayBlock = document.querySelector("#essay");
 
 document.querySelector("header").classList.add("no-bg");
 
@@ -434,22 +437,22 @@ document.querySelectorAll("header .paragraphs p").forEach((p, index) => {
         p.classList.add("choosen");
         language = p.dataset.lang;
         if (prevI == index) return;  
-        essayAnimation(prevI > index? true : false);
+        essayAnimation(prevI > index? 1 : -1);
     })
 })
 
-async function essayAnimation(right, speed = 60, distance = 1500) {
-    document.querySelector("#essay").style.left = 'unset';
-    let pos = -distance;
-    if (right) { document.querySelector("#essay").style.right = `${-distance}px`; }
-    else { document.querySelector("#essay").style.left = `${distance}px`; }
-    document.querySelector("#essay").textContent = essay[language];
-    for (let i = 0; i < distance / speed + 1; i++) {
-        await new Promise(resolve => setTimeout(resolve, 20));
-        if (right) { document.querySelector("#essay").style.right = pos + 'px'; }
-        else { document.querySelector("#essay").style.left = pos + 'px'; }
-        pos += speed;
-    }
+async function essayAnimation(multiplier, speed = 60, distance = 1500) {
+    essayBlock.style.transition = 'transform 0.3s ease, opacity 0.3s ease';
+    essayBlock.style.transform = `translateX(${100 * multiplier}%)`;
+    essayBlock.style.opacity = "0";
+    await new Promise(resolve => setTimeout(resolve, 300));
+    essayBlock.textContent = essay[language];
+    essayBlock.style.transform = `translateX(${-100 * multiplier}%)`;
+    await new Promise(resolve => setTimeout(resolve, 300));
+    essayBlock.style.opacity = "1";
+    essayBlock.style.transform = `translateX(0%)`;
+    await new Promise(resolve => setTimeout(resolve, 300));
+    essayBlock.style.transition = '';
 }
     </script>
 </body>
