@@ -395,6 +395,7 @@ const essay = {
 }
 
 document.querySelector("#essay").textContent = essay.russian;
+if (new URLSearchParams(window.location.search).has("blackTheme")) { theme = 'night'; document.querySelectorAll("*").forEach(el => el.classList.add("black")); addSafariThemeMeta(); }
 
 let language;
 let item = 0;
@@ -423,10 +424,12 @@ start();
 toggle.addEventListener("click", function(){
     if(theme == "day"){
         theme = 'night';
-        document.querySelectorAll("*").forEach(el => el.classList.add("black"))
+        document.querySelectorAll("*").forEach(el => el.classList.add("black"));
+        addSafariThemeMeta();
     }else if(theme == "night"){
         theme = 'day';
-        document.querySelectorAll("*").forEach(el => el.classList.remove("black"))
+        document.querySelectorAll("*").forEach(el => el.classList.remove("black"));
+        removeSafariThemeMeta();
     }
 });
 
@@ -453,6 +456,42 @@ async function essayAnimation(multiplier, speed = 60, distance = 1500) {
     essayBlock.style.transform = `translateX(0%)`;
     await new Promise(resolve => setTimeout(resolve, 300));
     essayBlock.style.transition = '';
+}
+
+function addSafariThemeMeta() {
+    // Удаляем существующие, если есть
+    removeSafariThemeMeta();
+    
+    // Создаем и добавляем новые
+    const metaCapable = document.createElement('meta');
+    metaCapable.name = 'apple-mobile-web-app-capable';
+    metaCapable.content = 'yes';
+    metaCapable.id = 'safari-meta-capable';
+    document.head.appendChild(metaCapable);
+    
+    const metaStatusBar = document.createElement('meta');
+    metaStatusBar.name = 'apple-mobile-web-app-status-bar-style';
+    metaStatusBar.content = 'black';
+    metaStatusBar.id = 'safari-meta-status';
+    document.head.appendChild(metaStatusBar);
+    
+    // Для обычного Safari на iOS (цвет адресной строки)
+    const metaThemeColor = document.createElement('meta');
+    metaThemeColor.name = 'theme-color';
+    metaThemeColor.content = '#000000';
+    metaThemeColor.id = 'safari-meta-theme';
+    document.head.appendChild(metaThemeColor);
+}
+
+// Удаление meta-тегов Safari
+function removeSafariThemeMeta() {
+    const metaCapable = document.getElementById('safari-meta-capable');
+    const metaStatusBar = document.getElementById('safari-meta-status');
+    const metaThemeColor = document.getElementById('safari-meta-theme');
+    
+    if (metaCapable) metaCapable.remove();
+    if (metaStatusBar) metaStatusBar.remove();
+    if (metaThemeColor) metaThemeColor.remove();
 }
     </script>
 </body>
