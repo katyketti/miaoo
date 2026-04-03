@@ -383,7 +383,6 @@ const mainText = document.querySelector(".main h1")
 const toggle = document.getElementById('toggle_checkbox')
 const essayBlock = document.querySelector("#essay");
 
-document.querySelector("header").classList.add("no-bg");
 
 const keys = ["  А  Я  E  ", "К            ", "  А          ", "    Т        ", "      Я      ", "        K    ", "         E  ", "           T", "КАТЯКЕТ", "КАТЯКЕТ"]
 const essay = {
@@ -393,13 +392,14 @@ const essay = {
     spanish: s,
     french: f
 }
-
-document.querySelector("#essay").textContent = essay.russian;
-if (new URLSearchParams(window.location.search).has("blackTheme")) { theme = 'night'; document.querySelectorAll("*").forEach(el => el.classList.add("black")); addSafariThemeMeta(); }
-
+        
 let language;
 let item = 0;
 let theme = 'day';
+
+document.querySelector("#essay").textContent = essay.russian;
+document.querySelector("header").classList.add("no-bg");
+if (new URLSearchParams(window.location.search).has("blackTheme")) { theme = 'night'; document.querySelectorAll("*").forEach(el => el.classList.add("black")); addSafariThemeMeta(); }
 
 //start animation
 async function start() {
