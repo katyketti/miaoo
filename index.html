@@ -399,7 +399,7 @@ let theme = 'day';
 
 document.querySelector("#essay").textContent = essay.russian;
 document.querySelector("header").classList.add("no-bg");
-if (new URLSearchParams(window.location.search).has("blackTheme")) { theme = 'night'; document.querySelectorAll("*").forEach(el => el.classList.add("black")); addSafariThemeMeta(); }
+if (new URLSearchParams(window.location.search).has("blackTheme")) { theme = 'night'; document.querySelectorAll("*").forEach(el => el.classList.add("black")); addSafariThemeMeta(); toggle.checked = true; }
 
 //start animation
 async function start() {
